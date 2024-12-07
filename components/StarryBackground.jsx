@@ -1,11 +1,11 @@
 import React from 'react';
 
-const StarryBackground: React.FC = () => {
+const StarryBackground = () => {
   const stars = Array.from({ length: 100 }, (_, i) => {
-    const size = Math.random() * 0.5 + 0.5; // 0.5 - 1.0 size
-    const duration = Math.random() * 3 + 4; // 4-7 seconds duration
-    const delay = Math.random() * 3; // Spread out initial delay
-    const startingOpacity = Math.random() * 0.3 + 0.2; // 0.2-0.5 opacity
+    const size = Math.random() * 0.5 + 0.5;
+    const duration = Math.random() * 3 + 4;
+    const delay = Math.random() * 3;
+    const startingOpacity = Math.random() * 0.3 + 0.2;
 
     return (
       <circle
@@ -13,8 +13,8 @@ const StarryBackground: React.FC = () => {
         cx={Math.random() * 100 + '%'}
         cy={Math.random() * 100 + '%'}
         r={size}
-        fill="#fff"
-        opacity={startingOpacity} // Start with minimum opacity
+        fill="#171717"
+        opacity={startingOpacity}
       >
         <animate
           attributeName="opacity"
@@ -29,6 +29,7 @@ const StarryBackground: React.FC = () => {
 
   return (
     <svg
+      id="starry-background"
       className="absolute inset-0 w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
     >
