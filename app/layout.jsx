@@ -2,6 +2,7 @@ import { geistSans, geistMono, inter, robotoMono, pacifico, reenieBeanie } from 
 import Navbar from "@components/Navbar";
 import StarryBackground from "@components/StarryBackground";
 import "./globals.css";
+import { NavigationProvider } from '@contexts/NavigationContext';
 
 export const metadata = {
   title: "Alex and Athena",
@@ -25,13 +26,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} ${inter.variable} ${robotoMono.variable} ${reenieBeanie.variable} antialiased bg-gradient-to-t from-slate-50 to-white`}>
-        <main className="mx-auto max-w-screen-lg p-6 md:px-12 lg:px-16">
-          <>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} ${inter.variable} ${robotoMono.variable} ${reenieBeanie.variable} antialiased bg-white`}>
+        <main className="mx-auto max-w-screen-lg px-6 md:px-12 lg:px-16">
+          <NavigationProvider>
             <StarryBackground />
             <Navbar />
             {children}
-          </>
+          </NavigationProvider>
         </main>
       </body>
     </html>

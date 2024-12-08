@@ -1,12 +1,19 @@
+import { useNavigation } from '@contexts/NavigationContext';
+import { useScrollToSection } from '@hooks/useScrollToSection';
+
 export default function ScrollButton({ targetId }) {
+  const { setActiveSection } = useNavigation();
+  const scrollToSection = useScrollToSection();
+  
   const scrollToTarget = () => {
-    document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(targetId);
+    scrollToSection(targetId);
   };
 
   return (
     <button 
       onClick={scrollToTarget}
-      className="absolute bottom-24 animate-bounce p-3 z-10"
+      className="absolute bottom-0 animate-bounce p-3 z-10"
     >
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
