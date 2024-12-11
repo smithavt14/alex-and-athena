@@ -11,7 +11,6 @@ export default function CloudinaryImage({ src, alt, width, height, className, on
         const response = await fetch(`/api/cloudinary?publicId=${encodeURIComponent(src)}`);
         const data = await response.json();
         setMetadata(data.metadata.custom);
-        console.log(data.metadata);
       } catch (error) {
         console.error('Error fetching metadata:', error);
       }

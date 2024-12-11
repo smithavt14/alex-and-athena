@@ -22,6 +22,12 @@
             ],
             "@contexts/*": [
                 "contexts/*"
+            ],
+            "@api/*": [
+                "app/api/*"
+            ],
+            "@content/*": [
+                "content/*"
             ]
         }
     }
