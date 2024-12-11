@@ -45,8 +45,8 @@ export default function CloudinaryImage({ src, alt, width, height, className, on
         height={height}
         className={className}
       />
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-        <p className="text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 md:transition-opacity md:duration-300 rounded-lg">
+        <p className="text-white text-center px-4 opacity-0 group-hover:opacity-100 md:transition-opacity md:duration-300">
           {metadata?.alt}
         </p>
       </div>
